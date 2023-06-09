@@ -1,6 +1,3 @@
-
-
-
 import { Configuration, OpenAIApi } from "openai";
 
 const TEMPLATE = './PRESENTATION_TITLE.pptx';
@@ -11,6 +8,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 const animal = `Create a ppt with the following description, output in json format: I am a programmer, generate a year-end summary ppt`;
+
 const completion = await openai.createCompletion({
   model: "text-davinci-003",
   prompt: animal,
@@ -19,4 +17,6 @@ const completion = await openai.createCompletion({
 });
 
 console.log('completion: ', completion);
+
+// todo chatGPT key expired,need new key to continue。
 
